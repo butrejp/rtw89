@@ -402,3 +402,5 @@ $ sudo dkms install $PWD
 $ sudo modprobe -r rtw89_8852cu_git rtw89_usb_git rtw89_8852c_git rtw89_core_git
 $ sudo modprobe rtw89_8852cu_git
 $ sudo ./holo-realtek-firmware-toggles set-low-latency-mode on
+
+Next try setting alyx to vulcan to see if that fixes the directional brightness bug.
