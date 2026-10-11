@@ -2,6 +2,17 @@
 
 To code, test and upstream great quality Linux Standards compliant (mac80211) USB WiFi drivers for the Realtek RTW89 driver series.
 
+## Steam Frame notes
+
+This repo is a fork to experiment with community patches aimed at improving performance of streaming to the Steam Frame headset from the RTW89-8852 USB wifi dongle.
+There are four branches in this repo:
+   * main: Same as the upstream rtw89 repo: https://github.com/morrownr/rtw89
+   * torsten: Patches from this repo applied: https://gitlab.com/torsten-projects/steam-frame-tinkering/-/tree/master/rtw89-usbagg/patches
+   * davenport: Patches from this repo applied: https://github.com/Davenport-Physics/rtw89-steam-frame/tree/master/patches
+   * torstendavenport: Both of the above patch sets.
+
+There are some notes in `tjnotes.md` from my testing. Generally speaking I found the most benefit from the torsten patches, and minimal (if any) improvements from the davenport patches.
+
 ## Compatibility
 
 Compatible with **Linux kernel versions 6.6 and newer** as long as your distro hasn't modified any kernel APIs. RHEL and all distros based on RHEL will have modified kernel APIs and are unlikely to be compatible with this driver.
