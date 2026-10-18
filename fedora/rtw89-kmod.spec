@@ -26,7 +26,7 @@
 %{!?buildforkernels: %global buildforkernels akmod}
 
 # Upstream version (sourced from dkms.conf via fedora/Makefile --define).
-%{!?kmod_version: %global kmod_version 7.3}
+%{!?kmod_version: %global kmod_version 7.3torsten}
 
 Name:           %{kmod_name}-kmod
 Version:        %{kmod_version}
