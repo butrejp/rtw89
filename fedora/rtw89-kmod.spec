@@ -53,10 +53,6 @@ BuildRequires:  make
 # - otherwise : --for-kernels "<kvers>"   -> binary kmod-rtw89-<kver>.
 %{expand:%(kmodtool --target %{_target_cpu} --repo %{kmod_name} --kmodname %{name} %{?kernels:--for-kernels "%{?kernels}"}%{!?kernels:--%{buildforkernels}} 2>/dev/null)}
 
-# Override kmodtool's akmod_install so the nested SRPM build receives
-# the same version and build mode as the outer rpmbuild invocation.
-%global akmod_install mkdir -p $RPM_BUILD_ROOT/%{_usrsrc}/akmods/; rpmbuild --define "_sourcedir %{_sourcedir}" --define "_srcrpmdir $RPM_BUILD_ROOT/%{_usrsrc}/akmods/" %{?dist:--define 'dist %{dist}'} --define 'kmod_version %{kmod_version}' --define 'buildforkernels %{buildforkernels}' -bs --nodeps %{_specdir}/%{name}.spec ; ln -s $(ls $RPM_BUILD_ROOT/%{_usrsrc}/akmods/) $RPM_BUILD_ROOT/%{_usrsrc}/akmods/%{pkg_kmod_name}.latest
-
 # --- common subpackage: shared modprobe config -----------------------------
 %package -n %{kmod_name}-kmod-common
 Summary:        Common files for the rtw89 kernel modules
